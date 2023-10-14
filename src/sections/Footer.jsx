@@ -19,8 +19,8 @@ const Footer = () => {
           <p className="text-base mt-6 leading-7 font-montserrat text-white-400 sm:max-w-sm">Get shoes ready for the new term at your nearest Nike store. Find Your perfect Size In Store. Get Rewards</p>
         </div>
         <div className="flex items-center gap-5 mt-8">
-          {socialMedia.map((icon) =>(
-          <div className="flex justify-center items-center w-12 h-12 bg-white rounded-full">
+          {socialMedia.map((icon, index) =>(
+          <div key={index} className="flex justify-center items-center w-12 h-12 bg-white rounded-full">
             <img
               src={icon.src}
               alt={icon.alt}
@@ -31,12 +31,12 @@ const Footer = () => {
           ))}
         </div> 
         <div className="flex flex-1 justify-between lg:gap-10 gap-20 flex-wrap">
-          {footerLinks.map((section) => (
-            <div key={section}>
+          {footerLinks.map((section, index) => (
+            <div key={index}>
               <h4 className="text-white font-montserrat text-2xl leading-normal font-medium mb-6">{section.title}</h4>
               <ul>
-                {section.links.map((link) =>(
-                  <li key={link.name} className="mt-3 text-white-400 font-montserrat text-base leading-normal hover:text-slate-gray cursor-pointer">
+                {section.links.map((link, index) =>(
+                  <li key={index} className="mt-3 text-white-400 font-montserrat text-base leading-normal hover:text-slate-gray cursor-pointer">
                     <a>{link.name}</a>
                   </li>
                 ))}
